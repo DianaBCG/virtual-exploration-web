@@ -7,11 +7,21 @@ import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
 // import model from '../../assets/models3d/ensamble_large_scoop.glb';
 // import model from '../../assets/models3d/ensamble_rake.glb';
 // import model from '../../assets/models3d/ensamble1_0FOV.glb';
-import model from '../../assets/models3d/prueba_escala_1_5.glb';
+import rake from '../../assets/models3d/Rake.glb';
+import small_scoop from '../../assets/models3d/small_scoop.glb';
+import big_scoop from '../../assets/models3d/big_scoop.glb';
+import stem from '../../assets/models3d/stem.glb';
+import extensionHandle from '../../assets/models3d/ExtensionHandle.glb';
+import multitool from '../../assets/models3d/multitool.glb';
 
 const models = [
-  model,
-]
+  rake,
+  small_scoop,
+  big_scoop,
+  stem,
+  extensionHandle,
+  multitool
+];
 
 function render(renderer, scene, camera) {
   renderer.render(scene, camera);
@@ -44,7 +54,7 @@ class ModelLoader2 extends Component {
             function (gltf) {
                 scene.add(gltf.scene);
                 gltf.scene.scale.set(0.1,0.1, 0.1);
-                gltf.scene.position.y = -50;
+                gltf.scene.position.y = src === 3 ? 0 : src === 5 ? -10 : -50;
                 render(renderer, scene, camera);
             }
             );
