@@ -6,7 +6,8 @@ import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
 
 // import model from '../../assets/models3d/ensamble_large_scoop.glb';
 // import model from '../../assets/models3d/ensamble_rake.glb';
-import model from '../../assets/models3d/ensamble1_0FOV.glb';
+// import model from '../../assets/models3d/ensamble1_0FOV.glb';
+import model from '../../assets/models3d/prueba_escala_1_5.glb';
 
 const models = [
   model,
@@ -38,16 +39,15 @@ class ModelLoader2 extends Component {
         "https://cdn.jsdelivr.net/gh/mrdoob/three.js@master/examples/textures/equirectangular/royal_esplanade_1k.hdr",
         function (texture) {
             const envMap = pmremGenerator.fromEquirectangular(texture).texture;
+            scene.environment = envMap;
             const loader = new GLTFLoader();
 
             loader.load(
-              (models[src] || models[0]),
+              models[src],
             function (gltf) {
                 scene.add(gltf.scene);
                 gltf.scene.scale.set(0.1,0.1, 0.1);
-                // gltf.scene.scale = 0.9;
                 gltf.scene.position.y = -50;
-                // gltf.scene.position.z = 600;
                 render(renderer, scene, camera);
             }
             );
@@ -65,7 +65,7 @@ class ModelLoader2 extends Component {
 
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.addEventListener("change", () => render(renderer, scene, camera)); // use if there is no animation loop
-    controls.minDistance = 10;
+    controls.minDistance = 15;
     controls.maxDistance = 400;
     controls.target.set(0, 0, -0.2);
     controls.update();

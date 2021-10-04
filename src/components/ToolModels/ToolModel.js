@@ -1,6 +1,6 @@
 import Card from '@material-ui/core/Card';
 import ModelLoader from '../ModelLoader';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import './models.css';
 
 import rake from '../../assets/images/rake.png';
@@ -9,10 +9,6 @@ import scoopB from '../../assets/images/scoopB.png';
 import stem from '../../assets/images/stem.png';
 import extensionHandle from '../../assets/images/extensionHandle.png';
 import multitool from '../../assets/images/multitool.png';
-
-// 3d models
-import rake3d from '../../assets/models3d/ensamble_rake.glb';
-import model from '../../assets/models3d/ensamble_rake.glb';
 
 const ToolModel = () => {
 	const [isModalOpen, setModalOpen] = useState(false);
@@ -76,7 +72,7 @@ const ToolModel = () => {
 						{model.name}
 						<div className="card-body">
 							<div style={{ height: 170 }}>{model.text}</div>
-							<img src={model.image} width={150} />
+							<img src={model.image} width={150} alt="" />
 						</div>
 						<div className="show-model-button" onClick={() => openModal(index)}>
 							Show model
