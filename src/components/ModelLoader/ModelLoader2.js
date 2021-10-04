@@ -18,10 +18,6 @@ function render(renderer, scene, camera) {
 }
 
 class ModelLoader2 extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     const { src } = this.props;
     var scene = new THREE.Scene();
@@ -30,6 +26,7 @@ class ModelLoader2 extends Component {
     renderer.setSize( window.innerWidth/2, window.innerHeight/2 );
     document.body.appendChild( renderer.domElement );
     this.mount.appendChild( renderer.domElement );
+    const cModel = models[src] || models[0];
 
     camera.position.set(-1.8, -0.9, -2.7);
     camera.position.z = -2.7;
@@ -43,7 +40,7 @@ class ModelLoader2 extends Component {
             const loader = new GLTFLoader();
 
             loader.load(
-              models[src],
+              cModel,
             function (gltf) {
                 scene.add(gltf.scene);
                 gltf.scene.scale.set(0.1,0.1, 0.1);

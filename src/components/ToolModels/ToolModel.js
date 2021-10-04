@@ -8,7 +8,7 @@ import scoopS from '../../assets/images/scoopS.png';
 import scoopB from '../../assets/images/scoopB.png';
 import stem from '../../assets/images/stem.png';
 import extensionHandle from '../../assets/images/extensionHandle.png';
-import multitool from '../../assets/images/multitool.png';
+import multitool from '../../assets/images/Multitool3.png';
 
 const ToolModel = () => {
 	const [isModalOpen, setModalOpen] = useState(false);
