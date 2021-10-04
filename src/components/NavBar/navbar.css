@@ -1,0 +1,25 @@
+.link {
+  color: white;
+  font-size: 24px;
+  font-style: normal;
+  text-decoration: none;
+  /* font-weight: bold; */
+  font-family: 'Titillium Web';
+}
+
+.link:hover {
+  color: blue;
+}
+
+.active-link {
+  color: cyan;
+}
+
+.nav-container {
+  min-width: 400px;
+  width: 50%;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  margin: 12px;
+}

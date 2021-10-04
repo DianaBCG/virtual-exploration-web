@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: black;
+  font-family: 'Titillium Web';
 }
 
 .App-logo {
@@ -26,6 +31,15 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 @keyframes App-logo-spin {
